@@ -1,0 +1,36 @@
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                <span>© 2025 Foodlytix — All Rights Reserved</span>
+                <span class="footer-divider">|</span>
+                <span>Themes By TemplateRise</span>
+            </div>
+        </div>
+    </footer>
+    <script>
+window.onload = function () {
+
+    let target = Number("{{ percent|default:0 }}");
+    let current = 0;
+    let increment = target / 100;
+
+    let interval = setInterval(function () {
+        current += increment;
+
+        document.getElementById("percentage").innerText =
+            Math.min(Math.round(current), target) + "%";
+
+        if (current >= target) {
+            clearInterval(interval);
+        }
+    }, 15);
+};
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="static/js/script.js"></script>
+</body>
+</html>
